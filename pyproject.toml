@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docurag"
+version = "0.1.0"
+description = "A PDF-first retrieval-augmented generation pipeline."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "openai>=1.0.0",
+  "pypdf>=5.0.0",
+  "uvicorn>=0.34.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[project.scripts]
+docurag = "docurag.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["docurag*"]
+
